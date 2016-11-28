@@ -39,29 +39,29 @@
     <!--</android.support.v4.widget.NestedScrollView>-->
     <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp"
-        >
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:id="@+id/appBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:elevation="0dp"-->
+        <!--&gt;-->
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:padding="0dp"
-            app:contentInsetEnd="0dp"
-            app:contentInsetLeft="0dp"
-            app:contentInsetRight="0dp"
-            app:contentInsetStart="0dp"
-            app:layout_scrollFlags="scroll|enterAlways"
-            >
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="0dp"-->
+            <!--app:contentInsetEnd="0dp"-->
+            <!--app:contentInsetLeft="0dp"-->
+            <!--app:contentInsetRight="0dp"-->
+            <!--app:contentInsetStart="0dp"-->
+            <!--app:layout_scrollFlags="scroll|enterAlways"-->
+            <!--&gt;-->
 
-            <include layout="@layout/toolbar_content"/>
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
+            <!--<include layout="@layout/toolbar_content"/>-->
+        <!--</android.support.v7.widget.Toolbar>-->
+    <!--</android.support.design.widget.AppBarLayout>-->
 
     <!--<View-->
         <!--android:id="@+id/gradient"-->

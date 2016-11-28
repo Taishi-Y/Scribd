@@ -7,15 +7,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.thefinestartist.finestwebview.FinestWebView;
 
 public class SubActivity extends AppCompatActivity {
 
 	ImageView ivThumbnail;
 	String imageLink,sampleLink,isbn;
+	TextView tvTitle,tvAuthor,tvReview,tvDescription;
 	Button btnPlaySample;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,10 @@ public class SubActivity extends AppCompatActivity {
 
 		ivThumbnail = (ImageView) findViewById(R.id.iv_thumbnail);
 		btnPlaySample = (Button) findViewById(R.id.btn_play_sample);
+
+		tvTitle = (TextView) findViewById(R.id.tv_title);
+		tvAuthor = (TextView) findViewById(R.id.tv_author);
+		tvReview = (TextView) findViewById(R.id.tv_review);
 
 		Intent i = getIntent();
 		imageLink = i.getStringExtra("IMAGELINK");

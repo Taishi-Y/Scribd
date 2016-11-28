@@ -40,6 +40,7 @@
 
             <TextView
                 android:text="Title"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btn_play_sample"
@@ -61,6 +62,14 @@
                 android:id="@+id/tv_review"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/tv_author"/>
+
+            <TextView
+                android:text="Review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_pages"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tv_review"/>
 
         </RelativeLayout>
     </ScrollView>

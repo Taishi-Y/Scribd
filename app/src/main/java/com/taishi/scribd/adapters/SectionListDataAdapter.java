@@ -63,9 +63,14 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
 		singleItem = itemsList.get(i);
 
 		final String title = singleItem.getVolumeInfo().getTitle();
+		final String author = singleItem.getVolumeInfo().getAuthors().get(0);
+
+
 		final String imageLink = singleItem.getVolumeInfo().getImageLinks().getSmallThumbnail();
 		final String sampleLink = singleItem.getAccessInfo().getWebReaderLink();
 		final String isbn = singleItem.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier();
+
+
 
 //		String authors = "";
 
@@ -112,6 +117,8 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
 //					intent.putExtra("AUTHOR",tvAuthor.getText());
 //					if(!(singleItem.getVolumeInfo().getImageLinks().getSmallThumbnail().isEmpty())) {
 
+				intent.putExtra("TITLE",title);
+				intent.putExtra("AUTHOR",author);
 				intent.putExtra("IMAGELINK",imageLink);
 				intent.putExtra("SAMPLELINK",sampleLink);
 				intent.putExtra("ISBN",isbn);
