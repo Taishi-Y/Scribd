@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity
 		}
 
 
-		String genre[] = {"Science fiction 〉","Satire 〉","Romance 〉","Mystery 〉","Horror 〉","Travel 〉","Art 〉","comics 〉"};
+		String genre[] = {"Science fiction 〉","Romance 〉","Mystery 〉","Horror 〉","Travel 〉","Art 〉"};
 		getAllData(genre);
 
 		my_recycler_view = (RecyclerView) findViewById(R.id.my_recycler_view);
@@ -156,9 +156,10 @@ public class MainActivity extends AppCompatActivity
 			dm.setHeaderTitle(headerTitle);
 			dm.setAllItemsInSection(itemList);
 
-			for(int i=0;i<itemList.size()-1;i++){
-				Log.v("test",itemList.get(i).getVolumeInfo().getTitle());
-			}
+//			for(int i=0;i<itemList.size()-1;i++){
+//				Log.e("title_text",itemList.get(i).getVolumeInfo().getTitle());
+//				Log.e("image_link",itemList.get(i).getVolumeInfo().getImageLinks().getSmallThumbnail());
+//			}
 
 			allSampleData.add(dm);
 
