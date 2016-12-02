@@ -1,11 +1,19 @@
 # Scribd
 <img src="https://github.com/Taishi-Y/Scribd/blob/master/images/screenshot.png?raw=true" 
-alt="" width="240" border="10" />
+alt="" width="180" border="10" />
+<img src="https://github.com/Taishi-Y/Scribd/blob/master/images/Screenshot_20161128-133435.png?raw=true" 
+alt="" width="180" border="10" />
+<img src="https://github.com/Taishi-Y/Scribd/blob/master/images/Screenshot_20161128-133445.png?raw=true" 
+alt="" width="180" border="10" />
 
 ## Overview
 
-This project is getting venue datas from Google Books API.( https://developers.google.com/books/ )
-You can just clone this sample repository and know how it works very easily.
+This project is getting information of books from Google Books API.( https://developers.google.com/books/ )
+You can also read sample pages of books through webview.
+We will learn these things :
+ - RecyclerView and Horizontal RecyclerView
+ - Retrofit library by Square
+ - WebView and execute javascript fanctions by using Android Java code
 
 #### MainActivity
 
@@ -16,7 +24,6 @@ Get 5 books from each 6 genres
  - Mystery
  - Horror
  - Travel
- - Art
 
 <img src="https://github.com/Taishi-Y/Scribd/blob/master/images/screenshot.png?raw=true" 
 alt="" width="180" border="10" />
