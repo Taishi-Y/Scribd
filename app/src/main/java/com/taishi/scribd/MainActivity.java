@@ -1,5 +1,6 @@
 package com.taishi.scribd;
 
+import android.app.*;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -37,10 +38,7 @@ public class MainActivity extends AppCompatActivity
 
 	private Toolbar toolbar;
 	ArrayList<SectionDataModel> allSampleData;
-	List<Item> itemList;
-	SectionDataModel dm = new SectionDataModel();
 	RecyclerView my_recycler_view;
-	String headerTitle;
 
 	RecyclerViewDataAdapter adapter;
 
@@ -60,17 +58,17 @@ public class MainActivity extends AppCompatActivity
 		}
 
 
-		String genre[] = {"Science fiction 〉","Romance 〉","Mystery 〉","Horror 〉","Travel 〉","Art 〉"};
+		String genre[] = {"Science fiction 〉","Romance 〉","Mystery 〉","Horror 〉","Travel 〉"};
 		getAllData(genre);
 
 		my_recycler_view = (RecyclerView) findViewById(R.id.my_recycler_view);
 
 		my_recycler_view.setHasFixedSize(true);
 
-		adapter = new RecyclerViewDataAdapter(this, allSampleData);
+//		adapter = new RecyclerViewDataAdapter(this, allSampleData);
 
-		my_recycler_view.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-		my_recycler_view.setAdapter(adapter);
+//		my_recycler_view.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//		my_recycler_view.setAdapter(adapter);
 
 		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 		fab.setOnClickListener(new View.OnClickListener() {
@@ -96,19 +94,9 @@ public class MainActivity extends AppCompatActivity
 
 			SectionDataModel dm = new SectionDataModel();
 
-//			dm.setHeaderTitle("Section " + i);
-
-//			ArrayList<SingleItemModel> singleItem = new ArrayList<SingleItemModel>();
-//			for (int j = 0; j <= 5; j++) {
-//				singleItem.add(new SingleItemModel("Item " + j, "URL " + j));
-//			}
-
-//			dm.setAllItemsInSection(singleItem);
-
 			BookAsyncTask atClass = new BookAsyncTask(genre[i]);
 			atClass.execute();
 
-//			allSampleData.add(dm);
 		}
 	}
 
@@ -140,34 +128,20 @@ public class MainActivity extends AppCompatActivity
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			return null;
+			return itemList;
 		}
 
 		@Override
 		protected void onPostExecute(List<Item> item_s) {
 			super.onPostExecute(item_s);
-//			ExploreListAdapter exploreListAdapter = new ExploreListAdapter(getApplicationContext(), R.layout.item_list, item_list);
-//			listView.setAdapter(exploreListAdapter);
-
-//			Log.v("item","orororo");
-//			Log.v("item",itemList.get(1).getVolumeInfo().getTitle());
 
 			SectionDataModel dm = new SectionDataModel();
 			dm.setHeaderTitle(headerTitle);
 			dm.setAllItemsInSection(itemList);
 
-//			for(int i=0;i<itemList.size()-1;i++){
-//				Log.e("title_text",itemList.get(i).getVolumeInfo().getTitle());
-//				Log.e("image_link",itemList.get(i).getVolumeInfo().getImageLinks().getSmallThumbnail());
-//			}
-
 			allSampleData.add(dm);
 
-
-
-
-
-//			RecyclerViewDataAdapter adapter = new RecyclerViewDataAdapter(getApplicationContext(), itemList);
+			adapter = new RecyclerViewDataAdapter(getApplicationContext(), allSampleData, MainActivity.this);
 
 			my_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
 			my_recycler_view.setAdapter(adapter);
@@ -189,6 +163,7 @@ public class MainActivity extends AppCompatActivity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+
 	}
 
 	@Override
@@ -200,6 +175,10 @@ public class MainActivity extends AppCompatActivity
 
 		//noinspection SimplifiableIfStatement
 		if (id == R.id.action_settings) {
+
+			DialogFragment newFragment = new DialogFragment();
+			newFragment.show(getSupportFragmentManager(),"test");
+//			newFragment.show(getFragmentManager(), "test");
 			return true;
 		}
 

@@ -1,6 +1,8 @@
 package com.taishi.scribd.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,10 +26,12 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
 
 	private ArrayList<SectionDataModel> dataList;
 	private Context mContext;
+	private AppCompatActivity activity;
 
-	public RecyclerViewDataAdapter(Context context, ArrayList<SectionDataModel> dataList) {
+	public RecyclerViewDataAdapter(Context context, ArrayList<SectionDataModel> dataList,AppCompatActivity activity) {
 		this.dataList = dataList;
 		this.mContext = context;
+		this.activity = activity;
 	}
 
 	@Override
@@ -46,7 +50,7 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
 
 		itemRowHolder.itemTitle.setText(sectionName);
 
-		SectionListDataAdapter itemListDataAdapter = new SectionListDataAdapter(mContext, singleSectionItems);
+		SectionListDataAdapter itemListDataAdapter = new SectionListDataAdapter(mContext, singleSectionItems, activity);
 
 		itemRowHolder.recycler_view_list.setHasFixedSize(true);
 		itemRowHolder.recycler_view_list.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
@@ -62,13 +66,6 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
 			}
 		});
 
-
-       /* Glide.with(mContext)
-                .load(feedItem.getImageURL())
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .centerCrop()
-                .error(R.drawable.bg)
-                .into(feedListRowHolder.thumbView);*/
 	}
 
 	@Override

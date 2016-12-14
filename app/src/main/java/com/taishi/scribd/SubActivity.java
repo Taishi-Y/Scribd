@@ -15,26 +15,34 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 public class SubActivity extends AppCompatActivity {
 
 	ImageView ivThumbnail;
-	String imageLink,sampleLink,isbn;
+	String imageLink,sampleLink,isbn, title, author, review, comment;
 	TextView tvTitle,tvAuthor,tvReview,tvDescription;
 	Button btnPlaySample;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_sub);
 
+
+	void findViewByIDs(){
 		ivThumbnail = (ImageView) findViewById(R.id.iv_thumbnail);
 		btnPlaySample = (Button) findViewById(R.id.btn_play_sample);
 
 		tvTitle = (TextView) findViewById(R.id.tv_title);
 		tvAuthor = (TextView) findViewById(R.id.tv_author);
 		tvReview = (TextView) findViewById(R.id.tv_review);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_sub);
+		findViewByIDs();
 
 		Intent i = getIntent();
+
+		title = i.getStringExtra("TITLE");
 		imageLink = i.getStringExtra("IMAGELINK");
 		sampleLink = i.getStringExtra("SAMPLELINK");
 		isbn = i.getStringExtra("ISBN");
-//		Log.v("imageLink",imageLink);
+
+		tvTitle.setText(title);
 
 //		if(!(singleItem.getVolumeInfo().getImageLinks().getSmallThumbnail().isEmpty())){
 			Glide.with(getApplicationContext())

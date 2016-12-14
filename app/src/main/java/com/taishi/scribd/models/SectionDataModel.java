@@ -33,13 +33,6 @@ public class SectionDataModel {
 		this.headerTitle = headerTitle;
 	}
 
-//	public ArrayList<SingleItemModel> getAllItemsInSection() {
-//		return allItemsInSection;
-//	}
-//
-//	public void setAllItemsInSection(ArrayList<SingleItemModel> allItemsInSection) {
-//		this.allItemsInSection = allItemsInSection;
-//	}
 
 	public List<Item> getAllItemsInSection() {
 		return allItemsInSection;

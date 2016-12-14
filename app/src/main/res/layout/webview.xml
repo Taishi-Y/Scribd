@@ -6,7 +6,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/finestWhite"
+
     tools:context=".MainActivity"
     >
 
@@ -27,7 +27,7 @@
         android:id="@+id/webLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/appBar">
+        >
 
         <WebView
             android:id="@+id/webView"
@@ -71,17 +71,17 @@
         <!--android:background="@color/finestBlack10"-->
         <!--/>-->
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/defaultProgressBarHeight"
-        android:layout_marginTop="@dimen/toolbarHeight"
-        android:indeterminate="false"
-        android:progressDrawable="@drawable/progress_drawable"
-        style="?android:attr/progressBarStyleHorizontal"
-        />
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progressBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/defaultProgressBarHeight"-->
+        <!--android:layout_marginTop="@dimen/toolbarHeight"-->
+        <!--android:indeterminate="false"-->
+        <!--android:progressDrawable="@drawable/progress_drawable"-->
+        <!--style="?android:attr/progressBarStyleHorizontal"-->
+        <!--/>-->
 
-    <include layout="@layout/menus"/>
+    <!--<include layout="@layout/menus"/>-->
 
 
     </RelativeLayout>

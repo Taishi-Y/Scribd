@@ -66,7 +66,7 @@ public class WebViewActivity extends AppCompatActivity {
 				"      \n" +
 				"      function initialize() {\n" +
 				"        viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));\n" +
-				"        viewer.load('ISBN:"+isbn+"');\n" +
+				"        viewer.load('ISBN:"+"0738531367"+"');\n" +
 				"      }\n" +
 				"\n" +
 				"      google.books.setOnLoadCallback(initialize);\n" +
