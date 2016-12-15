@@ -237,5 +237,10 @@ content_main.xml
 </RelativeLayout>
 ```
 
-
+<img src="https://github.com/Taishi-Y/Scribd/blob/master/images/s1m.png?raw=true" 
+alt="" width="180" border="10" />
+<img src="https://github.com/Taishi-Y/Scribd/blob/master/images/s2m.png?raw=true" 
+alt="" width="180" border="10" />
+<img src="https://github.com/Taishi-Y/Scribd/blob/master/images/s3m.png?raw=true" 
+alt="" width="180" border="10" />
 
