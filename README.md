@@ -15,6 +15,19 @@ We will learn these things :
  - Retrofit library by Square
  - WebView and execute javascript fanctions by using Android Java code
 
+## New
+I added DialogFragment feature to show title and description of the book with blurred background.
+It's invoked by longClick by user.
+
+Mine
+<img src="https://github.com/Taishi-Y/Scribd/blob/master/images/dialogdescription.gif?raw=true" 
+alt="" width="180" border="10" />
+<img src="https://github.com/Taishi-Y/Scribd/blob/master/images/toastdescription.gif?raw=true" 
+alt="" width="180" border="10" />
+Official Scribd
+
+
+
 #### MainActivity
 
 
