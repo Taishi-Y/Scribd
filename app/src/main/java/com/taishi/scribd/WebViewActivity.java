@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.webkit.CookieManager;
@@ -43,6 +44,8 @@ public class WebViewActivity extends AppCompatActivity {
 		webView.getSettings().setJavaScriptEnabled(true);
 //		webView.loadUrl("http://books.google.com/books/reader?id=c9QGODYINKgC&hl=&printsec=frontcover&output=reader&source=gbs_api");
 
+		Log.d("WebViewActivity","onCreate: isbn: " + isbn);
+
 
 		String html ="<!DOCTYPE html '-//W3C//DTD XHTML 1.0 Strict//EN'\n" +
 				"  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>\n" +
@@ -66,7 +69,8 @@ public class WebViewActivity extends AppCompatActivity {
 				"      \n" +
 				"      function initialize() {\n" +
 				"        viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));\n" +
-				"        viewer.load('ISBN:"+"0738531367"+"');\n" +
+//				"        viewer.load('ISBN:"+"0738531367"+"');\n" +
+						"        viewer.load('ISBN:"+isbn+"');\n" +
 				"      }\n" +
 				"\n" +
 				"      google.books.setOnLoadCallback(initialize);\n" +

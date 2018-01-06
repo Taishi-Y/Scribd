@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,8 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
 		List singleSectionItems = dataList.get(i).getAllItemsInSection();
 
 		itemRowHolder.itemTitle.setText(sectionName);
+
+		Log.d("RecyclerViewDataAdaper"," onBindViewHolder["+i+"]: " + sectionName);
 
 		SectionListDataAdapter itemListDataAdapter = new SectionListDataAdapter(mContext, singleSectionItems, activity);
 

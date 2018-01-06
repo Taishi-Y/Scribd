@@ -57,6 +57,9 @@ public class SubActivity extends AppCompatActivity {
 		btnPlaySample.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+
+				Log.d("SubActivity", "onClickListener: isbn: " + isbn);
+
 				Intent intent = new Intent(getApplicationContext(),WebViewActivity.class);
 				intent.putExtra("ISBN",isbn);
 				startActivity(intent);

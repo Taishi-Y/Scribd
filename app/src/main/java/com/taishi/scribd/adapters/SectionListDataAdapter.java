@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,14 +70,21 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
 		final String description = singleItem.getVolumeInfo().getDescription();
 
 
+
 		if (!(singleItem.getVolumeInfo().getAuthors().size() == 0)) {
 			author = singleItem.getVolumeInfo().getAuthors().get(0);
 			holder.tvAuthor.setText(authors);
 		}
 //		author = singleItem.getVolumeInfo().getAuthors().get(0);
 
+		// fix for when getimagelinks is null - jk
+		String tempImageLink = "";
+		if ((singleItem.getVolumeInfo() != null) && (singleItem.getVolumeInfo().getImageLinks() != null) &&
+						singleItem.getVolumeInfo().getImageLinks().getSmallThumbnail() != null) {
+			tempImageLink = singleItem.getVolumeInfo().getImageLinks().getSmallThumbnail();
+		}
+		final String imageLink = tempImageLink;
 
-		final String imageLink = singleItem.getVolumeInfo().getImageLinks().getSmallThumbnail();
 		final String sampleLink = singleItem.getAccessInfo().getWebReaderLink();
 
 		if (singleItem.getVolumeInfo().getPageCount() != null) {
@@ -138,11 +146,15 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
 
 				Toast.makeText(mContext, title, Toast.LENGTH_SHORT).show();
 				String isbn = "";
-//				if(!(singleItem.getVolumeInfo().getIndustryIdentifiers().size() == 0)){
-//					isbn = singleItem.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier();
-//				}
+
+				Item singleItem = itemsList.get(viewHolder.getLayoutPosition());
+				if(!(singleItem.getVolumeInfo().getIndustryIdentifiers().size() == 0)){
+					isbn = singleItem.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier();
+				}
 
 //				title = singleItem.getVolumeInfo().getTitle();
+
+				Log.d("SectionListDataAdapter", " onClick: " + title + " isbn: " + isbn);
 
 				Intent intent = new Intent(mContext, SubActivity.class);
 

@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity
 
 
 		String genre[] = {"Science fiction 〉","Romance 〉","Mystery 〉","Horror 〉","Travel 〉"};
+		// test other genres
+		//String genre[] = {"Sports > ", "Aikido > ", "Science fiction 〉","Romance 〉"};
 		getAllData(genre);
 
 		my_recycler_view = (RecyclerView) findViewById(R.id.my_recycler_view);
@@ -90,7 +92,8 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	public void getAllData(String genre[]) {
-		for (int i = 0; i < genre.length-1; i++) {
+
+		for (int i = 0; i < genre.length; i++) {
 
 			SectionDataModel dm = new SectionDataModel();
 
@@ -122,7 +125,14 @@ public class MainActivity extends AppCompatActivity
 				Book book =  call.execute().body();
 				itemList = book.getItems();
 
-				Log.v("title",book.toString());
+				Log.v("MainActivity", "BookAsyncTask: requestBook: " + headerTitle);
+
+				// debugging - show the book titles
+//				for (int i =  0; i < itemList.size() && i < 10; i++) {
+//					Item bookItem = itemList.get(i);
+//					Log.v("MainActivity", "BookAsyncTask: title["+i+"]: " + bookItem.getVolumeInfo().getTitle());
+//				}
+
 //				book.getItems().get(0).getVolumeInfo().getImageLinks().getSmallThumbnail();
 //				item_list = explore.getResponse().getGroups().get(0).getItems();
 			} catch (IOException e) {
